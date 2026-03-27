@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LASS-VISION-COM | Catalogue Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-banner {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('banniere.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm p-4 sticky top-0 z-50 border-b border-blue-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-2xl font-black text-blue-600 tracking-tighter italic">LASS-VISION</span>
+            <a href="https://wa.me/221777089554" class="bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition shadow-md">Aide WhatsApp</a>
+        </div>
+    </nav>
+
+    <header class="hero-banner flex items-center justify-center text-white text-center">
+        <div class="p-6">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-2xl">LASS-VISION-COM</h1>
+            <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-6">Impression sur tout support & Design Professionnel à Nianing.</p>
+            <span class="bg-blue-600 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-sm">Qualité Garantie</span>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-black text-center mb-16 text-slate-800">Nos Services & Tarifs</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="lacoste.jpg" alt="Lacoste" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">Lacoste Personnalisé</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">5 000 FCFA <span class="text-xs text-slate-400 font-normal">/ unité</span></p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
+                    <input type="number" id="qty-lacoste" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Lacoste Personnalisé', 5000, 'qty-lacoste')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="tshirt.jpg" alt="T-shirt" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">T-shirt Personnalisé</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">4 000 FCFA <span class="text-xs text-slate-400 font-normal">/ unité</span></p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
+                    <input type="number" id="qty-tshirt" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('T-shirt Personnalisé', 4000, 'qty-tshirt')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="sacs.jpg" alt="Sacs" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">Lot 100 Sacs (Baptême...)</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">28 000 FCFA <span class="text-xs text-slate-400 font-normal">/ le lot</span></p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Nb Lots:</label>
+                    <input type="number" id="qty-sacs" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Lot de 100 Sacs', 28000, 'qty-sacs')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="tasses.jpg" alt="Tasses" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">Tasse Personnalisée</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">3 500 FCFA <span class="text-xs text-slate-400 font-normal">/ unité</span></p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
+                    <input type="number" id="qty-tasse" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Tasse Personnalisée', 3500, 'qty-tasse')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="cartes.jpg" alt="Cartes" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">100 Cartes de Visite</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">10 000 FCFA <span class="text-xs text-slate-400 font-normal">/ lot</span></p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Lots:</label>
+                    <input type="number" id="qty-cartes" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('100 Cartes de Visite', 10000, 'qty-cartes')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="tampons.jpg" alt="Tampons" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">Tampon (Petit Format)</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">8 000 FCFA</p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
+                    <input type="number" id="qty-tampon" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Tampon Petit Format', 8000, 'qty-tampon')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="facturier.jpg" alt="Facturiers" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">5 Facturiers</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">12 000 FCFA <span class="text-xs text-slate-400 font-normal">/ lot</span></p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Lots:</label>
+                    <input type="number" id="qty-fact" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Lot de 5 Facturiers', 12000, 'qty-fact')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="photo_murale.jpg" alt="Tableau mural" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">Tableau Mural</h3>
+                <p class="text-blue-600 font-black text-2xl mt-1">Dès 3 000 FCFA</p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
+                    <input type="number" id="qty-mural" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Tableau Mural', 3000, 'qty-mural')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
+                <img src="tableau_publicitaire.jpg" alt="Enseigne" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <h3 class="font-bold text-2xl">Tableau Publicitaire</h3>
+                <p class="text-blue-600 font-black text-xl mt-1 uppercase italic">Sur Devis</p>
+                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase text-xs">Note:</label>
+                    <input type="text" id="note-pub" placeholder="Ex: 2m x 1m" class="w-full bg-transparent font-bold outline-none text-blue-600 text-sm">
+                </div>
+                <button onclick="commanderDevis('Tableau Publicitaire', 'note-pub')" class="mt-4 w-full bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Demander Prix</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-black mb-4 tracking-tighter italic">LASS-VISION-COM</h3>
+            <p class="text-slate-400 mb-8 max-w-md mx-auto italic opacity-70">"Votre vision, notre impression. La qualité pro à Nianing Baobab Caritas."</p>
+            <div class="flex flex-col gap-2 font-bold text-blue-400">
+                <span>Tel: 77 708 95 54</span>
+                <span class="text-xs text-slate-600">Site créé avec GitHub & Ubuntu</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function commander(produit, prix, inputId) {
+            const qty = document.getElementById(inputId).value;
+            const total = qty * prix;
+            const texte = `Bonjour LASS-VISION-COM !
+Je souhaite passer commande :
+- Produit : ${produit}
+- Quantité : ${qty}
+- Prix total estimé : ${total} FCFA
+
+Pouvez-vous me confirmer la commande ?`;
+            
+            const url = `https://wa.me/221777089554?text=${encodeURIComponent(texte)}`;
+            window.open(url, '_blank');
+        }
+
+        function commanderDevis(produit, noteId) {
+            const note = document.getElementById(noteId).value;
+            const texte = `Bonjour LASS-VISION-COM !
+Je souhaite un devis pour : ${produit}
+Précisions : ${note || 'Pas de précisions'}`;
+            
+            const url = `https://wa.me/221777089554?text=${encodeURIComponent(texte)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
