@@ -3,94 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LASS-VISION-COM | Catalogue Pro</title>
+    <title>LASS-VISION-COM | Catalogue Complet Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .hero-banner {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('banniere.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('banniere.png');
+            background-size: cover; background-position: center; min-height: 400px;
         }
-        .product-card { transition: all 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); }
+        .product-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border-color: #3b82f6; }
+        .thumb { cursor: pointer; border: 2px solid transparent; transition: 0.2s; width: 50px; h-50px; object-cover; border-radius: 8px; }
+        .thumb:hover { border-color: #3b82f6; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
 
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm p-4 sticky top-0 z-50 border-b border-blue-100">
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm p-4 sticky top-0 z-50 border-b border-blue-100">
         <div class="container mx-auto flex justify-between items-center">
-            <span class="text-2xl font-black text-blue-600 tracking-tighter italic">LASS-VISION</span>
-            <a href="https://wa.me/221777089554" class="bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition shadow-md">Aide WhatsApp</a>
+            <span class="text-2xl font-black text-blue-600 italic tracking-tighter">LASS-VISION-COM</span>
+            <a href="https://wa.me/221777089554" class="bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition shadow-lg">Commander via WhatsApp</a>
         </div>
     </nav>
 
     <header class="hero-banner flex items-center justify-center text-white text-center">
         <div class="p-6">
-            <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-2xl">LASS-VISION-COM</h1>
-            <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-6">Impression sur tout support & Design Professionnel à Nianing.</p>
-            <span class="bg-blue-600 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-sm">Qualité Garantie</span>
+            <h1 class="text-5xl md:text-7xl font-black mb-4 drop-shadow-2xl">LASS-VISION-COM</h1>
+            <p class="text-xl md:text-2xl font-light opacity-90 tracking-wide">Impression Tout Support • Design • Publicité</p>
+            <div class="mt-6 inline-block bg-blue-600 px-8 py-2 rounded-full font-bold uppercase text-sm tracking-widest">Nianing Baobab Caritas</div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-16">
-        <h2 class="text-4xl font-black text-center mb-16 text-slate-800">Nos Services & Tarifs</h2>
+        <h2 class="text-4xl font-black text-center mb-16 text-slate-800 uppercase tracking-tight">Notre Catalogue Services</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="lacoste.jpg" alt="Lacoste" class="w-full h-64 object-cover rounded-2xl mb-6">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6 border-2 border-blue-500 relative">
+                <span class="absolute top-4 right-4 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Nouveau</span>
+                <img src="étiquette.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <h3 class="font-bold text-2xl text-slate-800">Étiquettes Adhésives</h3>
+                <p class="text-blue-600 font-black text-2xl">10 000 FCFA <span class="text-sm font-normal text-slate-400">/ m²</span></p>
+                <div class="grid grid-cols-2 gap-3 mt-4 bg-slate-50 p-3 rounded-xl">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase">Largeur (m)</label>
+                        <input type="number" id="etq-w" value="1" step="0.1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase">Longueur (m)</label>
+                        <input type="number" id="etq-h" value="1" step="0.1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
+                    </div>
+                </div>
+                <button onclick="commanderEtiquettes()" class="mt-6 w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition">Calculer & Commander</button>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img src="lacoste.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">Lacoste Personnalisé</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">5 000 FCFA <span class="text-xs text-slate-400 font-normal">/ unité</span></p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
-                    <input type="number" id="qty-lacoste" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                <p class="text-blue-600 font-black text-2xl">5 000 FCFA</p>
+                <div class="mt-4 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm">Qté:</label>
+                    <input type="number" id="qty-lacoste" value="1" min="1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
                 </div>
-                <button onclick="commander('Lacoste Personnalisé', 5000, 'qty-lacoste')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <button onclick="commander('Lacoste Personnalisé', 5000, 'qty-lacoste')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="tshirt.jpg" alt="T-shirt" class="w-full h-64 object-cover rounded-2xl mb-6">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img src="tshirt.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">T-shirt Personnalisé</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">4 000 FCFA <span class="text-xs text-slate-400 font-normal">/ unité</span></p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
-                    <input type="number" id="qty-tshirt" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                <p class="text-blue-600 font-black text-2xl">4 000 FCFA</p>
+                <div class="mt-4 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm">Qté:</label>
+                    <input type="number" id="qty-tshirt" value="1" min="1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
                 </div>
-                <button onclick="commander('T-shirt Personnalisé', 4000, 'qty-tshirt')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <button onclick="commander('T-shirt Personnalisé', 4000, 'qty-tshirt')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="sacs.jpg" alt="Sacs" class="w-full h-64 object-cover rounded-2xl mb-6">
-                <h3 class="font-bold text-2xl">Lot 100 Sacs (Baptême...)</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">28 000 FCFA <span class="text-xs text-slate-400 font-normal">/ le lot</span></p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Nb Lots:</label>
-                    <input type="number" id="qty-sacs" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img id="img-sac" src="sac_1.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <div class="flex gap-2 mb-4">
+                    <img onclick="changeImg('img-sac', 'sac_1.jpg')" src="sac_1.jpg" class="thumb">
+                    <img onclick="changeImg('img-sac', 'sac_2.jpg')" src="sac_2.jpg" class="thumb">
+                    <img onclick="changeImg('img-sac', 'sac_3.jpg')" src="sac_3.jpg" class="thumb">
+                    <img onclick="changeImg('img-sac', 'sac4.jpg')" src="sac_4.jpg" class="thumb">
                 </div>
-                <button onclick="commander('Lot de 100 Sacs', 28000, 'qty-sacs')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <h3 class="font-bold text-2xl">100 Sacs Cadeaux</h3>
+                <p class="text-blue-600 font-black text-2xl">28 000 FCFA</p>
+                <input type="number" id="qty-sacs" value="1" class="mt-4 w-full bg-slate-100 p-3 rounded-xl font-bold" placeholder="Lots de 100">
+                <button onclick="commander('Lot de 100 Sacs', 28000, 'qty-sacs')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="tasses.jpg" alt="Tasses" class="w-full h-64 object-cover rounded-2xl mb-6">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img src="tasses.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">Tasse Personnalisée</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">3 500 FCFA <span class="text-xs text-slate-400 font-normal">/ unité</span></p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
-                    <input type="number" id="qty-tasse" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
-                </div>
-                <button onclick="commander('Tasse Personnalisée', 3500, 'qty-tasse')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <p class="text-blue-600 font-black text-2xl">3 500 FCFA</p>
+                <input type="number" id="qty-tasse" value="1" class="mt-4 w-full bg-slate-100 p-3 rounded-xl font-bold">
+                <button onclick="commander('Tasse Personnalisée', 3500, 'qty-tasse')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="cartes.jpg" alt="Cartes" class="w-full h-64 object-cover rounded-2xl mb-6">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img src="cartes.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">100 Cartes de Visite</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">10 000 FCFA <span class="text-xs text-slate-400 font-normal">/ lot</span></p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Lots:</label>
-                    <input type="number" id="qty-cartes" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
-                </div>
-                <button onclick="commander('100 Cartes de Visite', 10000, 'qty-cartes')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <p class="text-blue-600 font-black text-2xl">10 000 FCFA</p>
+                <input type="number" id="qty-cartes" value="1" class="mt-4 w-full bg-slate-100 p-3 rounded-xl font-bold">
+                <button onclick="commander('100 Cartes de Visite', 10000, 'qty-cartes')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
@@ -103,7 +118,7 @@
                 </div>
                 <button onclick="commander('Tampon Petit Format', 8000, 'qty-tampon')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
             </div>
-
+            
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
                 <img src="tampons.jpg" alt="Tampons" class="w-full h-64 object-cover rounded-2xl mb-6">
                 <h3 class="font-bold text-2xl">Tampon (Grand Format)</h3>
@@ -111,81 +126,66 @@
                 <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
                     <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
                     <input type="number" id="qty-tampon" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
-                </div>
-                <button onclick="commander('Tampon Grand Format', 12000, 'qty-tampon')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
-            </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="facturier.jpg" alt="Facturiers" class="w-full h-64 object-cover rounded-2xl mb-6">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img src="facturier.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">5 Facturiers</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">12 000 FCFA <span class="text-xs text-slate-400 font-normal">/ lot</span></p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Lots:</label>
-                    <input type="number" id="qty-fact" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
-                </div>
-                <button onclick="commander('Lot de 5 Facturiers', 12000, 'qty-fact')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <p class="text-blue-600 font-black text-2xl">12 000 FCFA</p>
+                <button onclick="commander('Lot de 5 Facturiers', 12000, 'qty-fact')" class="mt-6 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="photo_murale.jpg" alt="Tableau mural" class="w-full h-64 object-cover rounded-2xl mb-6">
-                <h3 class="font-bold text-2xl">Tableau Mural</h3>
-                <p class="text-blue-600 font-black text-2xl mt-1">Dès 5 000 FCFA</p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
-                    <input type="number" id="qty-mural" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
+                <img id="img-tab-mural" src="photo_murale_1.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <div class="flex gap-2 mb-4">
+                    <img onclick="changeImg('img-tab-mural', 'photo_murale_1.jpg')" src="photo_murale_1.jpg" class="thumb">
+                    <img onclick="changeImg('img-tab-mural', 'photo_murale_2.jpg')" src="photo_murale_2.jpg" class="thumb">
                 </div>
-                <button onclick="commander('Tableau Mural', 5000, 'qty-mural')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                <h3 class="font-bold text-2xl">Tableau Mural / Photo</h3>
+                <p class="text-blue-600 font-black text-2xl">Dès 5 000 FCFA</p>
+                <button onclick="window.open('https://wa.me/221777089554?text=Infos%20tableaux%20muraux')" class="mt-6 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
-                <img src="tableau_publicitaire.jpg" alt="Enseigne" class="w-full h-64 object-cover rounded-2xl mb-6">
-                <h3 class="font-bold text-2xl">Tableau Publicitaire</h3>
-                <p class="text-blue-600 font-black text-xl mt-1 uppercase italic">Sur Devis</p>
-                <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm uppercase text-xs">Note:</label>
-                    <input type="text" id="note-pub" placeholder="Ex: 2m x 1m" class="w-full bg-transparent font-bold outline-none text-blue-600 text-sm">
-                </div>
-                <button onclick="commanderDevis('Tableau Publicitaire', 'note-pub')" class="mt-4 w-full bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Demander Prix</button>
+            <div class="bg-white rounded-3xl overflow-hidden product-card p-6 bg-slate-900 text-white border-none shadow-2xl">
+                <img src="tableau_publicitaire.jpg" class="w-full h-64 object-cover rounded-2xl mb-4 opacity-80">
+                <h3 class="font-bold text-2xl">Enseignes & Pub</h3>
+                <p class="text-blue-400 font-black text-xl uppercase tracking-tighter mt-1 italic underline">Sur Devis Uniquement</p>
+                <p class="text-xs text-slate-400 mt-2">Panneaux, signalétique, impression grand format.</p>
+                <button onclick="window.open('https://wa.me/221777089554?text=Je%20veux%20un%20devis%20pour%20un%20tableau%20publicitaire')" class="mt-6 w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-500 shadow-lg">Demander Devis Pro</button>
             </div>
 
         </div>
     </main>
 
-    <footer class="bg-slate-900 text-white py-20 text-center">
+    <footer class="bg-white border-t border-slate-200 py-20 text-center mt-20">
         <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-black mb-4 tracking-tighter italic">LASS-VISION-COM</h3>
-            <p class="text-slate-400 mb-8 max-w-md mx-auto italic opacity-70">"Votre vision, notre impression. La qualité pro à Nianing Baobab Caritas."</p>
-            <div class="flex flex-col gap-2 font-bold text-blue-400">
+            <p class="text-3xl font-black text-slate-800 italic mb-2">LASS-VISION-COM</p>
+            <p class="text-slate-400 text-sm mb-8 italic">"La précision au service de votre image."</p>
+            <div class="flex flex-col gap-2 font-black text-blue-600 tracking-widest text-xs uppercase">
+                <span>Nianing Baobab Caritas</span>
                 <span>Tel: 77 708 95 54</span>
-                <span class="text-xs text-slate-600">Site créé par SARR Fatou</span>
             </div>
+            <p class="mt-12 text-[10px] text-slate-300">© 2026 - Création SARR Fatou</p>
         </div>
     </footer>
 
     <script>
-        function commander(produit, prix, inputId) {
-            const qty = document.getElementById(inputId).value;
-            const total = qty * prix;
-            const texte = `Bonjour LASS-VISION-COM !
-Je souhaite passer commande :
-- Produit : ${produit}
-- Quantité : ${qty}
-- Prix total estimé : ${total} FCFA
+        function changeImg(id, url) { document.getElementById(id).src = url; }
 
-Pouvez-vous me confirmer la commande ?`;
-            
-            const url = `https://wa.me/221777089554?text=${encodeURIComponent(texte)}`;
-            window.open(url, '_blank');
+        function commander(produit, prix, idQty) {
+            const input = document.getElementById(idQty);
+            const qte = input ? input.value : 1;
+            const total = qte * prix;
+            const msg = `Bonjour LASS-VISION-COM ! %0AJe souhaite commander : %0A- ${produit} %0A- Quantité : ${qte} %0A- Total estimé : ${total} FCFA`;
+            window.open(`https://wa.me/221777089554?text=${msg}`, '_blank');
         }
 
-        function commanderDevis(produit, noteId) {
-            const note = document.getElementById(noteId).value;
-            const texte = `Bonjour LASS-VISION-COM !
-Je souhaite un devis pour : ${produit}
-Précisions : ${note || 'Pas de précisions'}`;
-            
-            const url = `https://wa.me/221777089554?text=${encodeURIComponent(texte)}`;
-            window.open(url, '_blank');
+        function commanderEtiquettes() {
+            const w = document.getElementById('etq-w').value;
+            const h = document.getElementById('etq-h').value;
+            const m2 = w * h;
+            const total = m2 * 10000;
+            const msg = `Bonjour LASS-VISION-COM ! %0AJe souhaite des Étiquettes Adhésives : %0A- Dimensions : ${w}m x ${h}m (${m2.toFixed(2)} m²) %0A- Prix estimé : ${Math.round(total)} FCFA`;
+            window.open(`https://wa.me/221777089554?text=${msg}`, '_blank');
         }
     </script>
 
