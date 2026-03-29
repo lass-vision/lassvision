@@ -55,27 +55,77 @@
                 </div>
                 <button onclick="commanderEtiquettes()" class="mt-auto pt-6 w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition">Calculer & Commander</button>
             </div>
-
+            
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
                 <img src="lacoste.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">Lacoste Personnalisé</h3>
                 <p class="text-blue-600 font-black text-2xl">5 000 FCFA</p>
-                <div class="mt-4 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm">Qté:</label>
-                    <input type="number" id="qty-lacoste" value="1" min="1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
+                
+                <div class="mt-4 space-y-3 bg-slate-50 p-4 rounded-xl">
+                    <div class="flex items-center gap-2">
+                        <select id="size-lacoste-1" class="bg-white border border-slate-200 rounded-lg p-2 text-sm font-bold outline-none flex-grow">
+                            <option value="S">Taille S</option>
+                            <option value="M" selected>Taille M</option>
+                            <option value="L">Taille L</option>
+                            <option value="XL">Taille XL</option>
+                            <option value="XXL">Taille XXL</option>
+                        </select>
+                        <input type="number" id="qty-lacoste-1" value="1" min="1" class="w-16 p-2 rounded-lg border border-slate-200 font-bold text-center">
+                    </div>
+                    
+                    <details class="text-xs text-slate-500 font-bold cursor-pointer">
+                        <summary>+ Ajouter une autre taille</summary>
+                        <div class="flex items-center gap-2 mt-2">
+                            <select id="size-lacoste-2" class="bg-white border border-slate-200 rounded-lg p-2 text-sm outline-none flex-grow">
+                                <option value="">Choisir...</option>
+                                <option value="S">Taille S</option>
+                                <option value="M">Taille M</option>
+                                <option value="L">Taille L</option>
+                                <option value="XL">Taille XL</option>
+                                <option value="XXL">Taille XXL</option>
+                            </select>
+                            <input type="number" id="qty-lacoste-2" value="0" min="0" class="w-16 p-2 rounded-lg border border-slate-200 text-center">
+                        </div>
+                    </details>
                 </div>
-                <button onclick="commander('Lacoste Personnalisé', 5000, 'qty-lacoste')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
+
+                <button onclick="commanderVetement('Lacoste', 5000, 'lacoste')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
                 <img src="tshirt.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">T-shirt Personnalisé</h3>
                 <p class="text-blue-600 font-black text-2xl">4 000 FCFA</p>
-                <div class="mt-4 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
-                    <label class="font-bold text-slate-500 text-sm">Qté:</label>
-                    <input type="number" id="qty-tshirt" value="1" min="1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
+                
+                <div class="mt-4 space-y-3 bg-slate-50 p-4 rounded-xl">
+                    <div class="flex items-center gap-2">
+                        <select id="size-tshirt-1" class="bg-white border border-slate-200 rounded-lg p-2 text-sm font-bold outline-none flex-grow">
+                            <option value="S">Taille S</option>
+                            <option value="M" selected>Taille M</option>
+                            <option value="L">Taille L</option>
+                            <option value="XL">Taille XL</option>
+                            <option value="XXL">Taille XXL</option>
+                        </select>
+                        <input type="number" id="qty-tshirt-1" value="1" min="1" class="w-16 p-2 rounded-lg border border-slate-200 font-bold text-center">
+                    </div>
+                    
+                    <details class="text-xs text-slate-500 font-bold cursor-pointer">
+                        <summary>+ Ajouter une autre taille</summary>
+                        <div class="flex items-center gap-2 mt-2">
+                            <select id="size-tshirt-2" class="bg-white border border-slate-200 rounded-lg p-2 text-sm outline-none flex-grow">
+                                <option value="">Choisir...</option>
+                                <option value="S">Taille S</option>
+                                <option value="M">Taille M</option>
+                                <option value="L">Taille L</option>
+                                <option value="XL">Taille XL</option>
+                                <option value="XXL">Taille XXL</option>
+                            </select>
+                            <input type="number" id="qty-tshirt-2" value="0" min="0" class="w-16 p-2 rounded-lg border border-slate-200 text-center">
+                        </div>
+                    </details>
                 </div>
-                <button onclick="commander('T-shirt Personnalisé', 4000, 'qty-tshirt')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
+
+                <button onclick="commanderVetement('T-shirt', 4000, 'tshirt')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -176,6 +226,25 @@
             <p class="mt-12 text-[10px] text-slate-300">© 2026 - Création SARR Fatou</p>
         </div>
     </footer>
+
+function commanderVetement(nomProduit, prix, idPrefix) {
+    const s1 = document.getElementById(`size-${idPrefix}-1`).value;
+    const q1 = parseInt(document.getElementById(`qty-${idPrefix}-1`).value) || 0;
+    
+    const s2 = document.getElementById(`size-${idPrefix}-2`).value;
+    const q2 = parseInt(document.getElementById(`qty-${idPrefix}-2`).value) || 0;
+    
+    const totalQty = q1 + q2;
+    const totalPrix = totalQty * prix;
+    
+    let details = `${q1}x (${s1})`;
+    if (q2 > 0 && s2 !== "") {
+        details += ` et ${q2}x (${s2})`;
+    }
+
+    const msg = `Bonjour LASS-VISION-COM ! %0AJe souhaite commander des ${nomProduit}s : %0A- Détails : ${details} %0A- Total : ${totalPrix} FCFA`;
+    window.open(`https://wa.me/221777089554?text=${msg}`, '_blank');
+}
 
     <script>
         function changeImg(id, url) { document.getElementById(id).src = url; }
