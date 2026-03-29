@@ -10,9 +10,9 @@
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('banniere.png');
             background-size: cover; background-position: center; min-height: 400px;
         }
-        .product-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; display: flex; flex-direction: column; }
+        .product-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; display: flex; flex-direction: column; height: 100%; }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border-color: #3b82f6; }
-        .thumb { cursor: pointer; border: 2px solid transparent; transition: 0.2s; width: 50px; h-50px; object-cover; border-radius: 8px; }
+        .thumb { cursor: pointer; border: 2px solid transparent; transition: 0.2s; width: 50px; height: 50px; object-fit: cover; border-radius: 8px; }
         .thumb:hover { border-color: #3b82f6; }
     </style>
 </head>
@@ -40,7 +40,7 @@
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6 border-2 border-blue-500 relative">
                 <span class="absolute top-4 right-4 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Nouveau</span>
-                <img src="étiquette.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <img src="etiquette.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl text-slate-800">Étiquettes Adhésives</h3>
                 <p class="text-blue-600 font-black text-2xl">10 000 FCFA <span class="text-sm font-normal text-slate-400">/ m²</span></p>
                 <div class="grid grid-cols-2 gap-3 mt-4 bg-slate-50 p-3 rounded-xl">
@@ -53,7 +53,7 @@
                         <input type="number" id="etq-h" value="1" step="0.1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
                     </div>
                 </div>
-                <button onclick="commanderEtiquettes()" class="mt-6 w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition">Calculer & Commander</button>
+                <button onclick="commanderEtiquettes()" class="mt-auto pt-6 w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition">Calculer & Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -64,7 +64,7 @@
                     <label class="font-bold text-slate-500 text-sm">Qté:</label>
                     <input type="number" id="qty-lacoste" value="1" min="1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
                 </div>
-                <button onclick="commander('Lacoste Personnalisé', 5000, 'qty-lacoste')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
+                <button onclick="commander('Lacoste Personnalisé', 5000, 'qty-lacoste')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -75,7 +75,7 @@
                     <label class="font-bold text-slate-500 text-sm">Qté:</label>
                     <input type="number" id="qty-tshirt" value="1" min="1" class="w-full bg-transparent font-bold text-blue-600 outline-none">
                 </div>
-                <button onclick="commander('T-shirt Personnalisé', 4000, 'qty-tshirt')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
+                <button onclick="commander('T-shirt Personnalisé', 4000, 'qty-tshirt')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -89,7 +89,7 @@
                 <h3 class="font-bold text-2xl">100 Sacs Cadeaux</h3>
                 <p class="text-blue-600 font-black text-2xl">28 000 FCFA</p>
                 <input type="number" id="qty-sacs" value="1" class="mt-4 w-full bg-slate-100 p-3 rounded-xl font-bold" placeholder="Lots de 100">
-                <button onclick="commander('Lot de 100 Sacs', 28000, 'qty-sacs')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
+                <button onclick="commander('Lot de 100 Sacs', 28000, 'qty-sacs')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -97,7 +97,7 @@
                 <h3 class="font-bold text-2xl">Tasse Personnalisée</h3>
                 <p class="text-blue-600 font-black text-2xl">3 500 FCFA</p>
                 <input type="number" id="qty-tasse" value="1" class="mt-4 w-full bg-slate-100 p-3 rounded-xl font-bold">
-                <button onclick="commander('Tasse Personnalisée', 3500, 'qty-tasse')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
+                <button onclick="commander('Tasse Personnalisée', 3500, 'qty-tasse')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -105,7 +105,7 @@
                 <h3 class="font-bold text-2xl">100 Cartes de Visite</h3>
                 <p class="text-blue-600 font-black text-2xl">10 000 FCFA</p>
                 <input type="number" id="qty-cartes" value="1" class="mt-4 w-full bg-slate-100 p-3 rounded-xl font-bold">
-                <button onclick="commander('100 Cartes de Visite', 10000, 'qty-cartes')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
+                <button onclick="commander('100 Cartes de Visite', 10000, 'qty-cartes')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
@@ -114,26 +114,31 @@
                 <p class="text-blue-600 font-black text-2xl mt-1">8 000 FCFA</p>
                 <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
                     <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
-                    <input type="number" id="qty-tampon" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
-                <button onclick="commander('Tampon Petit Format', 8000, 'qty-tampon')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
+                    <input type="number" id="qty-tampon-p" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Tampon Petit Format', 8000, 'qty-tampon-p')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button>
             </div>
-            
+
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden product-card border border-slate-100 p-6">
                 <img src="tampons.jpg" alt="Tampons" class="w-full h-64 object-cover rounded-2xl mb-6">
                 <h3 class="font-bold text-2xl">Tampon (Grand Format)</h3>
                 <p class="text-blue-600 font-black text-2xl mt-1">12 000 FCFA</p>
                 <div class="mt-6 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
                     <label class="font-bold text-slate-500 text-sm uppercase">Qté:</label>
-                    <input type="number" id="qty-tampon" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
-                </div> <button onclick="commander('Tampon Grand Format', 12000, 'qty-tampon')" class="mt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button> 
+                    <input type="number" id="qty-tampon-g" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
+                </div>
+                <button onclick="commander('Tampon Grand Format', 12000, 'qty-tampon-g')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition shadow-lg">Commander</button> 
             </div>   
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
                 <img src="facturier.jpg" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h3 class="font-bold text-2xl">5 Facturiers</h3>
                 <p class="text-blue-600 font-black text-2xl">12 000 FCFA</p>
+                <div class="mt-4 flex items-center gap-4 bg-slate-50 p-3 rounded-xl">
+                    <label class="font-bold text-slate-500 text-sm uppercase">Lots:</label>
+                    <input type="number" id="qty-fact" value="1" min="1" class="w-full bg-transparent font-bold outline-none text-blue-600 text-lg">
                 </div>
-                <button onclick="commander('Lot de 5 Facturiers', 12000, 'qty-fact')" class="mt-6 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
+                <button onclick="commander('Lot de 5 Facturiers', 12000, 'qty-fact')" class="mt-auto pt-4 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6">
@@ -146,15 +151,15 @@
                 </div>
                 <h3 class="font-bold text-2xl">Tableau Mural / Photo</h3>
                 <p class="text-blue-600 font-black text-2xl">Dès 5 000 FCFA</p>
-                <button onclick="window.open('https://wa.me/221777089554?text=Infos%20tableaux%20muraux')" class="mt-6 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600">Commander</button>
+                <button onclick="window.open('https://wa.me/221777089554?text=Infos%20tableaux%20muraux')" class="mt-auto pt-6 w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition">Commander</button>
             </div>
 
             <div class="bg-white rounded-3xl overflow-hidden product-card p-6 bg-slate-900 text-white border-none shadow-2xl">
                 <img src="tableau_publicitaire.jpg" class="w-full h-64 object-cover rounded-2xl mb-4 opacity-80">
-                <h3 class="font-bold text-2xl">Enseignes & Pub</h3>
+                <h3 class="font-bold text-2xl text-white">Enseignes & Pub</h3>
                 <p class="text-blue-400 font-black text-xl uppercase tracking-tighter mt-1 italic underline">Sur Devis Uniquement</p>
-                <p class="text-xs text-slate-400 mt-2">Panneaux, signalétique, impression grand format.</p>
-                <button onclick="window.open('https://wa.me/221777089554?text=Je%20veux%20un%20devis%20pour%20un%20tableau%20publicitaire')" class="mt-6 w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-500 shadow-lg">Demander Devis Pro</button>
+                <p class="text-xs text-slate-400 mt-2 mb-6">Panneaux, signalétique, impression grand format.</p>
+                <button onclick="window.open('https://wa.me/221777089554?text=Je%20veux%20un%20devis%20pour%20un%20tableau%20publicitaire')" class="mt-auto w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-500 shadow-lg transition">Demander Devis Pro</button>
             </div>
 
         </div>
@@ -192,6 +197,6 @@
             window.open(`https://wa.me/221777089554?text=${msg}`, '_blank');
         }
     </script>
-
 </body>
 </html>
+
